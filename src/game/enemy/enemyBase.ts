@@ -11,7 +11,7 @@ abstract class EnemyBase {
 
   public speed: number = 500
 
-  constructor(scene: Phaser.Scene, path: Phaser.Types.Tweens.TweenBuilderConfig | null) {
+  constructor(scene: Phaser.Scene, path: Phaser.Types.Tweens.TweenBuilderConfig | Phaser.Types.Tweens.TweenChainBuilderConfig | null) {
     this.sprite = scene.add.sprite(640, 300, "star")
     this.sprite.setScale(0.5)
     this.state = { hp: 0 }
@@ -22,7 +22,7 @@ abstract class EnemyBase {
       if (path.targets == null) {
         path.targets = this.sprite
       }
-      scene.tweens.add(path)
+      scene.tweens.chain(path)
     }
 
     //this.sprite.postFX.addBloom(0xffffff, 1, 1, 1, 1, 4)

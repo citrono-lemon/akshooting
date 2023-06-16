@@ -1,4 +1,5 @@
 import Enemy from "./enemy"
+import TweenUtil from "./tweenUtil"
 
 
 
@@ -12,23 +13,17 @@ export default class EnemyManager {
     let timeline = scene.add.timeline([
       {
         at: 0,
-        run: () => new Enemy(scene, { targets: null, x: 0, y: "-=100", duration: 1000 })
-      }, {
-        at: 0,
-        run: () => new Enemy(scene, { targets: null, x: 0, y: "-=0", duration: 1000 })
-      }, {
-        at: 0,
-        run: () => new Enemy(scene, { targets: null, x: 0, y: "+=100", duration: 1000 })
-      }, {
-        at: 200,
-        run: () => new Enemy(scene, { targets: null, x: 0, y: "-=100", duration: 1000 })
-      }, {
-        at: 200,
-        run: () => new Enemy(scene, { targets: null, x: 0, y: "-=0", duration: 1000 })
-      }, {
-        at: 200,
-        run: () => new Enemy(scene, { targets: null, x: 0, y: "+=100", duration: 1000 })
-      }
+        run: () => new Enemy(scene, TweenUtil.UpToDownArc(scene, 400))
+      },
+      {
+        at: 500,
+        run: () => new Enemy(scene, TweenUtil.UpToDownArc(scene, 400))
+      },
+      {
+        at: 1000,
+        run: () => new Enemy(scene, TweenUtil.UpToDownArc(scene, 400))
+      },
+
     ])
 
     timeline.play()
