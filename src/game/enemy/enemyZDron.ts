@@ -1,10 +1,11 @@
 import { GameObjects, Physics, Tweens } from "phaser"
 
+import EnemyBase from "./enemyBase";
 interface EnemyStatus {
   hp: number
 }
 
-abstract class EnemyBase {
+class EnemyZDron extends EnemyBase {
   public sprite: GameObjects.Sprite
   //public enemy: Phaser.Physics.Arcade.Group
   public state: EnemyStatus
@@ -12,6 +13,7 @@ abstract class EnemyBase {
   public speed: number = 500
 
   constructor(scene: Phaser.Scene, path: Phaser.Types.Tweens.TweenBuilderConfig | Phaser.Types.Tweens.TweenChainBuilderConfig | null) {
+    super(scene, path)
     this.sprite = scene.add.sprite(640, 300, "enemy")
     this.sprite.setScale(0.2)
     this.state = { hp: 0 }
@@ -28,14 +30,7 @@ abstract class EnemyBase {
 
     //this.sprite.postFX.addBloom(0xffffff, 1, 1, 1, 1, 4)
   }
-
-  instantiate() {
-    //this.sprite.timelin
-  }
-
-  disappear(score: number) {
-
-  }
 }
 
-export default EnemyBase
+
+export default EnemyZDron

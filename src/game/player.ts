@@ -11,7 +11,7 @@ class Player {
 
   constructor(scene: Phaser.Scene) {
     this.spineObject = scene.add.spineContainer(200, 300, "player", "Walk", true)
-    this.spineObject.spine.setScale(0.1, 0.1)
+    this.spineObject.spine.setScale(0.5, 0.5)
       .setMix("Idle2", "Jump", 0.1)
       .setMix("Idle2", "Walk", 0.1)
       .setMix("Walk", "Jump", 0.1)

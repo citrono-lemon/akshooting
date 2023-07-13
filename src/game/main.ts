@@ -35,6 +35,7 @@ class MainScene extends Phaser.Scene {
     this.load.setPath("assets")
     this.load.image("pp", "sd_player.png")
     this.load.image("star", "star.png")
+    this.load.image("enemy", "enemy.png")
     this.load.spine("player", "sd_player.json", ["sd_player.atlas"], true)
   }
 

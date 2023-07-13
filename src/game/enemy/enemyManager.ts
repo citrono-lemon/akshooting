@@ -10,6 +10,7 @@ export default class EnemyManager {
 
   instantiate(scene: Phaser.Scene) {
 
+
     let timeline = scene.add.timeline([
       {
         at: 0,
@@ -26,6 +27,10 @@ export default class EnemyManager {
 
     ])
 
-    timeline.play()
+    timeline.add({
+      at: 250,
+      run: () => new Enemy(scene, TweenUtil.UpToDownArc(scene, 400))
+    })
+    //timeline.play()
   }
 }

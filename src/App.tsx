@@ -6,8 +6,8 @@ import MainScene from './game/main';
 
 // Phaserの設定
 const config: Phaser.Types.Core.GameConfig = {
-  width: 1280,
-  height: 720,
+  width: 720,
+  height: 1280,
   type: Phaser.AUTO,
   pixelArt: false,
   backgroundColor: 0xcdcdcd,
